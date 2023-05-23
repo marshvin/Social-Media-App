@@ -2,6 +2,8 @@ import express from "express";
 import bodyParser from "body-parser";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
+import AuthRoute from './Routes/AuthRoute.js'
+
 // Routes
 
 const app = express();
@@ -26,3 +28,5 @@ mongoose.connect(
   )
 )
 .catch((error) => console.log(error));
+
+app.use('/', AuthRoute)
