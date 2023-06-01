@@ -13,7 +13,6 @@ const app = express();
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 
-
 dotenv.config();
 mongoose.connect(
   process.env.MONGO_DB,
@@ -29,4 +28,4 @@ mongoose.connect(
 )
 .catch((error) => console.log(error));
 
-app.use('/', AuthRoute)
+app.use('/auth', AuthRoute)
